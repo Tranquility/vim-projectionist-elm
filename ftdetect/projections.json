@@ -1,0 +1,25 @@
+{
+  "src/*.elm": {
+    "type":      "src",
+    "alternate": "tests/{}Test.elm"
+  },
+  "tests/*Test.elm": {
+    "type":      "test",
+    "template": [
+      "module {camelcase|capitalize}Test exposing (suite)",
+      "",
+      "import Test exposing (..)",
+      "import Expect",
+      "",
+      "",
+      "suite : Test",
+      "suite =",
+      "    describe \"{camelcase|capitalize}\"",
+      "        [ test \"\" <|",
+      "            \\_ ->",
+      "                Expect.equal \"\" \"\"",
+      "        ]"
+    ],
+    "alternate": "src/{}.elm"
+  }
+}
